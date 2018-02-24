@@ -1,4 +1,4 @@
-
+window.Neon = require('@cityofzion/neon-js');
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
 

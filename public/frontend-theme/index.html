@@ -1,41 +1,55 @@
 <!DOCTYPE HTML>
 <!--
-	{{env('APP_NAME')}} by HTML5 UP
+	Alpha by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>{{env('APP_NAME')}} by HTML5 UP</title>
+		<title>Alpha by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="frontend-theme/assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="frontend-theme/assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="frontend-theme/assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body class="landing">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="index.html">{{env('APP_NAME')}}</a> by HTML5 UP</h1>
+					<h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
 					<nav id="nav">
 						<ul>
-              @if(Auth::check())
-							<li><a href="{{url('/home')}}">Home</a></li>
-              @endif
-							
-							<li><a href="{{url('/register')}}" class="button">Sign Up</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">Layouts</a>
+								<ul>
+									<li><a href="generic.html">Generic</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li><a href="elements.html">Elements</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option One</a></li>
+											<li><a href="#">Option Two</a></li>
+											<li><a href="#">Option Three</a></li>
+											<li><a href="#">Option Four</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
 				</header>
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>{{env('APP_NAME')}}</h2>
+					<h2>Alpha</h2>
 					<p>Another fine responsive site template freebie by HTML5 UP.</p>
 					<ul class="actions">
-						<li><a href="{{url('/register')}}" class="button special">Sign Up</a></li>
+						<li><a href="#" class="button special">Sign Up</a></li>
 						<li><a href="#" class="button">Learn More</a></li>
 					</ul>
 				</section>
@@ -51,7 +65,7 @@
 							<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
 							adipiscing nunc adipiscing. Condimentum turpis massa.</p>
 						</header>
-						<span class="image featured"><img src="frontend-theme/images/pic01.jpg" alt="" /></span>
+						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
 					</section>
 
 					<section class="box special features">
@@ -85,7 +99,7 @@
 						<div class="6u 12u(narrower)">
 
 							<section class="box special">
-								<span class="image featured"><img src="frontend-theme/images/pic02.jpg" alt="" /></span>
+								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
 								<h3>Sed lorem adipiscing</h3>
 								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
 								<ul class="actions">
@@ -97,7 +111,7 @@
 						<div class="6u 12u(narrower)">
 
 							<section class="box special">
-								<span class="image featured"><img src="frontend-theme/images/pic03.jpg" alt="" /></span>
+								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
 								<h3>Accumsan integer</h3>
 								<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
 								<ul class="actions">
@@ -147,13 +161,13 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="frontend-theme/assets/js/jquery.min.js"></script>
-			<script src="frontend-theme/assets/js/jquery.dropotron.min.js"></script>
-			<script src="frontend-theme/assets/js/jquery.scrollgress.min.js"></script>
-			<script src="frontend-theme/assets/js/skel.min.js"></script>
-			<script src="frontend-theme/assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="frontend-theme/assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="frontend-theme/assets/js/main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
