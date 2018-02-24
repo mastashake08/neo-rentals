@@ -15,6 +15,17 @@ class CreateRentalsTable extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('address');
+            $table->string('city');
+            $table->string('state');
+            $table->string('zip');
+            $table->string('photo');
+            $table->string('description');
+            $table->boolean('is_rented');
+            $table->decimal('down_deposit');
+            $table->decimal('monthly_rent');
             $table->timestamps();
         });
     }
