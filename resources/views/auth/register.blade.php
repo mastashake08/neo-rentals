@@ -44,10 +44,10 @@
 
                             <div class="col-md-6">
                               <div class="radio">
-                              <label><input type="radio" name="type">Renter</label>
+                              <label><input type="radio" value="renter" name="type">Renter</label>
                               </div>
                               <div class="radio">
-                              <label><input type="radio" name="type">Rental Owner</label>
+                              <label><input type="radio" value="owner" name="type">Rental Owner</label>
                               </div>
                                 @if ($errors->has('type'))
                                     <span class="invalid-feedback">

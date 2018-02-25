@@ -6,7 +6,9 @@
                     <div class="card-header">My Wallet</div>
 
                     <div class="card-body">
-                        <b>{{neoAccount}}</b>
+                        <b>Your Wallet Address: {{address}}</b>
+                        <br>
+                        <b>Balance: {{balance}}</b>
                     </div>
                 </div>
             </div>
@@ -26,11 +28,23 @@
           neoAccount: {},
           publicKey: null,
           address: null,
+          walletAccount: {},
+          balance: ""
 
         }
         },
         created(){
-          this.createNeoAccount()
+          var that = this;
+          axios.get('/api/me').then(function(data){
+            if(data.wallet = null){
+              that.createNeoAccount();
+            }
+            else{
+              that.privateKey = data.privateKey;
+              that.wif = data.wif;
+              that.loadAccount();
+            }
+          })
 
 
         },
@@ -42,6 +56,7 @@
             this.neoAccount = Neon.default.create.account(this.privateKey)
             this.publicKey = this.neoAccount.publicKey
             this.address = this.neoAccount.address
+            this.walletAccount = new Neon.wallet.Account(this.privateKey)
             /*
             // Encryption / Decryption
             const encrypted = Neon.encrypt.privateKey(privateKey, 'myPassword')
@@ -54,9 +69,23 @@
             // Transaction signing
             const signature = Neon.create.signature(tx, privateKey)
             */
+            this.getBalance()
 
           },
+          loadAccount: function(){
+            this.neoAccount = Neon.default.create.account(this.privateKey)
+            //this.wif = Neon.default.get.WIFFromPrivateKey(this.privateKey)
+            this.publicKey = this.neoAccount.publicKey
+            this.address = this.neoAccount.address
+            this.walletAccount = new Neon.wallet.Account(this.privateKey)
+            this.getBalance()
 
+
+
+          },
+          getBalance: function(){
+            this.balance =  new Neon.wallet.Balance({net: 'TestNet', address: this.address})
+          }
         }
     }
 </script>
