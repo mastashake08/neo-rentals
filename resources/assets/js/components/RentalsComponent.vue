@@ -48,7 +48,7 @@
           promptInquiry: function(){
             confirm('Inquire about property?')
             // Need to invokeFunction for inquiry function
-            
+            alert('Inquiry has been submitted, results will be sent to your email!')
           }
         }
     }

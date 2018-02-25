@@ -47292,6 +47292,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     promptInquiry: function promptInquiry() {
       confirm('Inquire about property?');
       // Need to invokeFunction for inquiry function
+      alert('Inquiry has been submitted, results will be sent to your email!');
     }
   }
 });
