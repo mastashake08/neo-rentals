@@ -20,7 +20,7 @@ $factory->define(App\Rental::class, function (Faker $faker) {
         'city' => $faker->city, // secret
         'state' => $faker->state,
         'zip' => $faker->postcode,
-        'photo' => $faker->imageUrl($width = 640, $height = 480),
+        'photo' => 'http://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/4152-21/square-one-apartments-exterior.jpg',
         'description' => $faker->paragraph,
         'down_deposit' => $faker->randomFloat($nbMaxDecimals = 8, $min = 3, $max = 10),
         'monthly_rent' => $faker->randomFloat($nbMaxDecimals = 8, $min = 3, $max = 10),

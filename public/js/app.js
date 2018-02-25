@@ -47290,7 +47290,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     promptInquiry: function promptInquiry() {
-      prompt('You are about to inquire about');
+      confirm('Inquire about property?');
+      // Need to invokeFunction for inquiry function
     }
   }
 });
@@ -47312,37 +47313,48 @@ var render = function() {
           _c("div", { staticClass: "card-body" }, [
             _c(
               "ul",
-              _vm._l(_vm.rentals, function(rental) {
-                return _c("li", [
-                  _c("span", [
-                    _c("img", { attrs: { src: rental.photo } }),
-                    _vm._v(
-                      " " +
-                        _vm._s(rental.address) +
-                        " " +
-                        _vm._s(rental.city) +
-                        " " +
-                        _vm._s(rental.state) +
-                        " " +
-                        _vm._s(rental.zip) +
-                        "\n                        "
-                    ),
-                    _c("br"),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-success",
-                        on: {
-                          click: function($event) {
-                            _vm.promptInquiry()
-                          }
+              [
+                _vm._l(_vm.rentals, function(rental) {
+                  return _c("li", [
+                    _c("span", [
+                      _c("img", {
+                        staticClass: "img img-responsive img-rounded",
+                        attrs: {
+                          width: "640",
+                          height: "640",
+                          src: rental.photo
                         }
-                      },
-                      [_vm._v("Inquire")]
-                    )
+                      }),
+                      _vm._v(
+                        " " +
+                          _vm._s(rental.address) +
+                          " " +
+                          _vm._s(rental.city) +
+                          " " +
+                          _vm._s(rental.state) +
+                          " " +
+                          _vm._s(rental.zip) +
+                          "\n                        "
+                      ),
+                      _c("br"),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-success",
+                          on: {
+                            click: function($event) {
+                              _vm.promptInquiry()
+                            }
+                          }
+                        },
+                        [_vm._v("Inquire")]
+                      )
+                    ])
                   ])
-                ])
-              })
+                }),
+                _c("br")
+              ],
+              2
             )
           ])
         ])

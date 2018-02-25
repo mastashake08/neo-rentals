@@ -8,8 +8,8 @@
                     <div class="card-body">
                       <ul>
                         <li v-for="rental in rentals">
-                          <span><img :src="rental.photo"> {{rental.address}} {{rental.city}} {{rental.state}} {{rental.zip}}
-                            <br><button class="btn btn-success" v-on:click="promptInquiry()">Inquire</button></span></li>
+                          <span><img width="640" height="640" class="img img-responsive img-rounded" :src="rental.photo"> {{rental.address}} {{rental.city}} {{rental.state}} {{rental.zip}}
+                            <br><button class="btn btn-success" v-on:click="promptInquiry()">Inquire</button></span></li><br>
                       </ul>
                     </div>
                 </div>
@@ -46,7 +46,9 @@
             })
           },
           promptInquiry: function(){
-            prompt('You are about to inquire about')
+            confirm('Inquire about property?')
+            // Need to invokeFunction for inquiry function
+            
           }
         }
     }
