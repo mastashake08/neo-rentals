@@ -68,7 +68,7 @@ def Main(operation, args):
             return 0
         renter_wallet_address = args[0]
         property_address = args[1]
-        return AddPayment(renter_wallet_address, property_address)
+        return AddLatePayment(renter_wallet_address)
 
 
 def QueryRenter(renter_wallet_address):

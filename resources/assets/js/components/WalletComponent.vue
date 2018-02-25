@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <b>Your Wallet Address: {{address}}</b>
                         <br>
-                        <b>Balance: {{balance}}</b>
+                        <b>Balance: </b>
                     </div>
                 </div>
             </div>

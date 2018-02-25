@@ -47172,7 +47172,7 @@ var render = function() {
             _vm._v(" "),
             _c("br"),
             _vm._v(" "),
-            _c("b", [_vm._v("Balance: " + _vm._s(_vm.balance))])
+            _c("b", [_vm._v("Balance: ")])
           ])
         ])
       ])
@@ -47260,6 +47260,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -47286,6 +47288,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Invoke smart contract function to add claim to blockchain
         */
       });
+    },
+    promptInquiry: function promptInquiry() {
+      prompt('You are about to inquire about');
     }
   }
 });
@@ -47308,7 +47313,35 @@ var render = function() {
             _c(
               "ul",
               _vm._l(_vm.rentals, function(rental) {
-                return _c("li", [_vm._v(_vm._s(rental))])
+                return _c("li", [
+                  _c("span", [
+                    _c("img", { attrs: { src: rental.photo } }),
+                    _vm._v(
+                      " " +
+                        _vm._s(rental.address) +
+                        " " +
+                        _vm._s(rental.city) +
+                        " " +
+                        _vm._s(rental.state) +
+                        " " +
+                        _vm._s(rental.zip) +
+                        "\n                        "
+                    ),
+                    _c("br"),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success",
+                        on: {
+                          click: function($event) {
+                            _vm.promptInquiry()
+                          }
+                        }
+                      },
+                      [_vm._v("Inquire")]
+                    )
+                  ])
+                ])
               })
             )
           ])
