@@ -24,7 +24,7 @@
               @if(Auth::check())
 							<li><a href="{{url('/home')}}">Home</a></li>
               @endif
-							
+
 							<li><a href="{{url('/register')}}" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
@@ -33,7 +33,7 @@
 			<!-- Banner -->
 				<section id="banner">
 					<h2>{{env('APP_NAME')}}</h2>
-					<p>Another fine responsive site template freebie by HTML5 UP.</p>
+					<p>Rental inquiries, history, and payments on the blockchain</p>
 					<ul class="actions">
 						<li><a href="{{url('/register')}}" class="button special">Sign Up</a></li>
 						<li><a href="#" class="button">Learn More</a></li>
@@ -45,11 +45,11 @@
 
 					<section class="box special">
 						<header class="major">
-							<h2>Introducing the ultimate mobile app
+							<h2>Introducing the reinvention of rental transactions
 							<br />
-							for doing stuff with your phone</h2>
-							<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
-							adipiscing nunc adipiscing. Condimentum turpis massa.</p>
+							utilizing the power of the blockchain.</h2>
+							<p>{{env('APP_NAME')}} connects rental owners and renters together with the power of the blockchain.<br />
+							Low costs, immutable data, ultimate transparency</p>
 						</header>
 						<span class="image featured"><img src="frontend-theme/images/pic01.jpg" alt="" /></span>
 					</section>

@@ -22,6 +22,7 @@ from boa.blockchain.vm.Neo.Runtime import Log, Notify
 from boa.blockchain.vm.Neo.Runtime import CheckWitness
 from boa.blockchain.vm.Neo.Storage import GetContext, Get, Put, Delete
 from boa.code.builtins import concat
+import json
 
 
 def Main(operation, args):
@@ -68,7 +69,23 @@ def Main(operation, args):
             return 0
         renter_wallet_address = args[0]
         property_address = args[1]
-        return AddLatePayment(renter_wallet_address)
+        return AddLatePayment(renter_wallet_address,property_address)
+
+    elif operation == 'add_eviction':
+        if nargs < 2:
+            print("required arguments: [renter_wallet_address] [property_address]")
+            return 0
+        renter_wallet_address = args[0]
+        property_address = args[1]
+        return AddEviction(renter_wallet_address,property_address)
+
+    elif operation == 'should_rent_query':
+        if nargs < 2:
+            print("required arguments: [renter_wallet_address] [property_address]")
+            return 0
+        renter_wallet_address = args[0]
+        property_address = args[1]
+        return ShouldRentQuery(renter_wallet_address,property_address)
 
 
 def QueryRenter(renter_wallet_address):
@@ -84,6 +101,20 @@ def QueryRenter(renter_wallet_address):
     Notify(owner)
     return owner
 
+def ShouldRentQuery(renter_wallet_address,property_address):
+    msg = concat("ShouldRentQuery: ", renter_wallet_address)
+    Notify(msg)
+
+    context = GetContext()
+    renter = Get(context, renter_wallet_address)
+    if not renter:
+        Notify("Renter is not yet registered")
+        return False
+    else:
+        renter = json.loads(renter)
+
+    Notify(owner)
+    return owner
 
 def RegisterRenter(renter_wallet_address, owner):
     msg = concat("RegisterRenter: ", renter_wallet_address)
