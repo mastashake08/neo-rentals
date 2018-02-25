@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Http\Resources\UserResource;
+use App\Http\Resources\RentalsCollection;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,4 +16,8 @@ use App\Http\Resources\UserResource;
 
 Route::middleware('auth:api')->get('/me', function (Request $request) {
     return new UserResource($request->user());
+});
+
+Route::middleware('auth:api')->get('/rentals',function(Request $request){
+  return new RentalsCollection(\App\Rental::all());
 });

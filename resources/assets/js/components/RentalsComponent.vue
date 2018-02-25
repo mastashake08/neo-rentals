@@ -7,7 +7,7 @@
 
                     <div class="card-body">
                       <ul>
-                        
+                        <li v-for="rental in rentals">{{rental}}</li>
                       </ul>
                     </div>
                 </div>
@@ -23,15 +23,15 @@
         },
         data() {
           return {
-          rentals : [],
-          description:"",
-          selectedRental: {},
-          scriptBuilder: {}
+          rentals : {}
 
         }
         },
         created(){
-          this.scriptBuilder = Neon.default.create.scriptBuilder()
+          var that = this
+          axios.get('/api/rentals').then(function(data){
+            that.rentals = data.data.data
+          });
 
         },
         methods:{

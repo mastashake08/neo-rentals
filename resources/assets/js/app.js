@@ -17,7 +17,7 @@ console.log(Neon)
  */
 
 Vue.component('wallet-component', require('./components/WalletComponent.vue'));
-
+Vue.component('rentals-component', require('./components/RentalsComponent.vue'));
 const app = new Vue({
     el: '#app'
 });
