@@ -24,5 +24,7 @@ Route::middleware('auth:api')->get('/rentals',function(Request $request){
 });
 Route::post('publish',function(Request $request){
   Log::info($request->all());
-  return 0;
+  return response()->json([
+    'code' => 0
+  ]);
 });
