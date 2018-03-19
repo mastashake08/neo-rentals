@@ -21,3 +21,6 @@ Route::middleware('auth:api')->get('/me', function (Request $request) {
 Route::middleware('auth:api')->get('/rentals',function(Request $request){
   return new RentalsCollection(\App\Rental::all());
 });
+Route::post('publish',function(Request $request){
+  return 0;
+});
