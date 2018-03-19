@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Log;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('publish',function(Request $request){
+  Log::info($request->all());
+  return 0;
+});
