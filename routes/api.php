@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\RentalsCollection;
+use Illuminate\Support\Facades\Log;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,5 +23,6 @@ Route::middleware('auth:api')->get('/rentals',function(Request $request){
   return new RentalsCollection(\App\Rental::all());
 });
 Route::post('publish',function(Request $request){
+  Log::info('Api Called At: '.now());
   return 0;
 });
